@@ -36,9 +36,11 @@ struct BrowseView: View {
 
                             Text(weather.name)
                                 .font(.title)
-                            Text("\(weather.main.temp, specifier: "%.1f") °F")
+                            Text("\(weather.main.temp, specifier: "%.f") °F")
+
                         }
                         .padding()
+
                     }
                 }
 
