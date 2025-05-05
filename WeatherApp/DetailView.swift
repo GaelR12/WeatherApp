@@ -14,7 +14,7 @@ struct DetailView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            if let description = weather.weather.first?.description {
+            if let description = weather.weather.first?.description { // sets name for searched city 
                 Image(systemName: symbolForWeather(description))
                     .resizable()
                     .scaledToFit()
@@ -24,9 +24,9 @@ struct DetailView: View {
 
             Text(weather.name).font(.largeTitle)
             Text(weather.weather.first?.description.capitalized ?? "")
-            Text("Temp: \(weather.main.temp, specifier: "%.1f") °F")
+            Text("Temp: \(weather.main.temp, specifier: "%.f") °F")
             Text("Humidity: \(weather.main.humidity)%")
-            Text("Wind Speed: \(weather.wind.speed) mph")
+            Text("Wind Speed: \(weather.wind.speed, specifier: "%.f") mph")
             Button("Favorite") {
                 viewModel.addToFavorites()
             }

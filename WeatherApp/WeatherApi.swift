@@ -7,8 +7,9 @@
 
 import Foundation
 
+// documentation on weather api 
 struct WeatherData: Codable, Identifiable {
-    var id: UUID { UUID() }
+    var id: UUID { UUID() } //A universally unique value to identify types, interfaces, and other items (Swift  documentation)
     let name: String
     let main: Main
     let weather: [Weather]
@@ -30,6 +31,8 @@ struct WeatherData: Codable, Identifiable {
     }
 }
 
+
+// fix this
 class WeatherAPI {
     static let shared = WeatherAPI()
     private let apiKey = "cc84d0f211330128f0bf0c8c5bc56c20" 

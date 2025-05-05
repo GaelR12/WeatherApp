@@ -19,7 +19,7 @@ struct BrowseView: View {
                     .padding()
 
                 Button("Search") {
-                    viewModel.fetchWeather(for: viewModel.city)
+                    viewModel.fetchWeather(for: viewModel.city) // calling api
                 }
                 .padding()
 
@@ -44,9 +44,9 @@ struct BrowseView: View {
 
                 Spacer()
             }
-            .navigationTitle("Weather Browser")
+            .navigationTitle("Weather")
             .onAppear {
-                viewModel.fetchWeather(for: viewModel.city)
+                viewModel.fetchWeather(for: viewModel.city) // looks for cities weather data
             }
         }
     }
